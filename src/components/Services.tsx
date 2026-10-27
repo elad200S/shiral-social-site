@@ -142,10 +142,10 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={containerRef} className="relative px-4 py-20 sm:px-10">
+    <section id="services" ref={containerRef} className="relative bg-paper-soft px-4 py-20 sm:px-10">
       <div className="mx-auto mb-16 max-w-3xl text-center" dir="rtl">
-        <span className="text-xs font-semibold tracking-[0.3em] text-neon">השירותים שלנו</span>
-        <h2 className="font-display mt-4 text-3xl font-bold text-white sm:text-5xl">
+        <span className="text-xs font-bold tracking-[0.3em] text-neon">השירותים שלנו</span>
+        <h2 className="font-display mt-4 text-3xl font-black text-ink sm:text-5xl">
           שישה תחומים, אסטרטגיה אחת
         </h2>
       </div>
@@ -154,25 +154,25 @@ export default function Services() {
         {SERVICES.map((service) => (
           <div
             key={service.index}
-            className="service-card glass relative mb-6 flex min-h-[62vh] flex-col justify-between rounded-3xl p-8 sm:p-12"
+            className="service-card card-soft relative mb-6 flex min-h-[62vh] flex-col justify-between rounded-3xl p-8 sm:p-12"
             dir="rtl"
           >
             <div className="flex items-start justify-between">
-              <span className="font-display text-sm text-white/40">{service.index}</span>
-              <span className="glass flex h-11 w-11 items-center justify-center rounded-2xl">
+              <span className="font-display text-sm text-ink/35">{service.index}</span>
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-neon/15">
                 <service.icon className="h-5 w-5 text-neon" />
               </span>
             </div>
 
             <div>
-              <h3 className="font-display text-3xl font-bold text-white sm:text-5xl">
+              <h3 className="font-display text-3xl font-black text-ink sm:text-5xl">
                 {service.title}
               </h3>
-              <p className="mt-5 max-w-xl text-base text-white/60 sm:text-lg">{service.tagline}</p>
+              <p className="mt-5 max-w-xl text-base text-ink/60 sm:text-lg">{service.tagline}</p>
 
               <ul className="mt-8 flex flex-col gap-3">
                 {service.points.map((point) => (
-                  <li key={point} className="flex items-center gap-3 text-sm text-white/70 sm:text-base">
+                  <li key={point} className="flex items-center gap-3 text-sm text-ink/70 sm:text-base">
                     <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-neon" />
                     {point}
                   </li>

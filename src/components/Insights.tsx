@@ -23,8 +23,8 @@ export default function Insights() {
   return (
     <section id="insights" className="relative px-4 py-24 sm:px-10">
       <div className="mx-auto mb-14 flex max-w-5xl flex-col items-center text-center" dir="rtl">
-        <span className="text-xs font-semibold tracking-[0.3em] text-neon">תובנות</span>
-        <h2 className="font-display mt-4 text-3xl font-bold text-white sm:text-5xl">
+        <span className="text-xs font-bold tracking-[0.3em] text-neon">תובנות</span>
+        <h2 className="font-display mt-4 text-3xl font-black text-ink sm:text-5xl">
           לא עוד תוכן גנרי. ידע שעובד.
         </h2>
       </div>
@@ -38,14 +38,14 @@ export default function Insights() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="glass group flex flex-col justify-between rounded-3xl p-7 transition hover:border-neon/40"
+            className="card-soft group flex flex-col justify-between rounded-3xl p-7 transition hover:border-neon/40"
           >
             <div>
-              <span className="text-xs font-semibold text-neon">{article.category}</span>
-              <h3 className="font-display mt-4 text-xl font-bold text-white">{article.title}</h3>
-              <p className="mt-3 text-sm text-white/55">{article.excerpt}</p>
+              <span className="text-xs font-bold text-neon">{article.category}</span>
+              <h3 className="font-display mt-4 text-xl font-bold text-ink">{article.title}</h3>
+              <p className="mt-3 text-sm text-ink/55">{article.excerpt}</p>
             </div>
-            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition group-hover:text-neon">
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink/70 transition group-hover:text-neon">
               לקריאה
               <ArrowLeft className="h-4 w-4 transition group-hover:-translate-x-1" />
             </span>

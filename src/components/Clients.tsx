@@ -5,8 +5,8 @@ export default function Clients() {
   const track = [...CLIENTS, ...CLIENTS];
 
   return (
-    <section id="clients" className="relative overflow-hidden border-y border-white/5 py-14">
-      <p className="mb-8 text-center text-xs font-semibold tracking-[0.3em] text-white/40" dir="rtl">
+    <section id="clients" className="relative overflow-hidden border-y border-ink/8 bg-paper py-14">
+      <p className="mb-8 text-center text-xs font-bold tracking-[0.3em] text-ink/40" dir="rtl">
         עסקים שבנו איתנו אסטרטגיה
       </p>
 
@@ -15,7 +15,7 @@ export default function Clients() {
           {track.map((name, i) => (
             <span
               key={i}
-              className="font-display shrink-0 whitespace-nowrap text-2xl font-semibold text-white/25 transition hover:text-white/60"
+              className="font-display shrink-0 whitespace-nowrap text-2xl font-extrabold text-ink/25 transition hover:text-ink/60"
             >
               {name}
             </span>
@@ -23,8 +23,8 @@ export default function Clients() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-ink to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-ink to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-paper to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-paper to-transparent" />
     </section>
   );
 }
