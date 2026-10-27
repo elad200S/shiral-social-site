@@ -4,8 +4,8 @@
   --color-ink: #09090b;
   --color-ink-soft: #111113;
   --color-surface: #16161a;
-  --color-neon: #bb3507;
-  --color-neon-soft: #da9077;
+  --color-neon: #fb9d15;
+  --color-neon-soft: #fdc97e;
   --font-display: "Space Grotesk", "Noto Sans Hebrew", sans-serif;
   --font-body: "Noto Sans Hebrew", sans-serif;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .glow-neon {
-  box-shadow: 0 0 20px rgba(187, 53, 7, 0.35), 0 0 60px rgba(187, 53, 7, 0.12);
+  box-shadow: 0 0 20px rgba(251, 157, 21, 0.35), 0 0 60px rgba(251, 157, 21, 0.12);
 }
 
 .text-neon {

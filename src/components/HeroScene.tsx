@@ -15,7 +15,7 @@ function Wireframe() {
   return (
     <mesh ref={ref}>
       <icosahedronGeometry args={[2.2, 1]} />
-      <meshBasicMaterial color="#bb3507" wireframe transparent opacity={0.3} />
+      <meshBasicMaterial color="#fb9d15" wireframe transparent opacity={0.3} />
     </mesh>
   );
 }
@@ -30,7 +30,7 @@ export default function HeroScene() {
       >
         <ambientLight intensity={0.7} />
         <Wireframe />
-        <Sparkles count={36} scale={6.5} size={2.2} speed={0.3} color="#bb3507" />
+        <Sparkles count={36} scale={6.5} size={2.2} speed={0.3} color="#fb9d15" />
       </Canvas>
     </div>
   );
