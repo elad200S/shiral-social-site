@@ -89,8 +89,10 @@ export default function Services() {
       let dim: gsap.core.Tween | null = null;
       if (i < cards.length - 1) {
         dim = gsap.to(card, {
-          scale: 0.92,
-          filter: "brightness(0.5)",
+          scale: 0.88,
+          y: -36,
+          rotate: i % 2 === 0 ? -2.5 : 2.5,
+          filter: "brightness(0.45)",
           ease: "none",
           scrollTrigger: {
             trigger: cards[i + 1],

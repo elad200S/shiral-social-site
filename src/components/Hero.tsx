@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import HeroScene from "./HeroScene";
+import HandsReveal from "./HandsReveal";
 
 export default function Hero() {
   return (
@@ -15,6 +16,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 hidden opacity-70 sm:block">
         <HeroScene />
       </div>
+      <HandsReveal />
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]"
         aria-hidden="true"
