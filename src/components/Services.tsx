@@ -72,7 +72,34 @@ export default function Services() {
   useEffect(() => {
     const cards = gsap.utils.toArray<HTMLElement>(".service-card");
 
+    // Each card's resting tilt before it reaches the top of the stack —
+    // alternating left/right and growing with index, like a fanned deck.
+    const fan = (i: number) => ({
+      rotate: i % 2 === 0 ? -(6 + i * 1.5) : 6 + i * 1.5,
+      x: i % 2 === 0 ? -(24 + i * 4) : 24 + i * 4,
+    });
+
+    cards.forEach((card, i) => {
+      const { rotate, x } = fan(i);
+      gsap.set(card, { rotate, x, transformOrigin: "50% 100%" });
+    });
+
     const triggers = cards.map((card, i) => {
+      const { rotate, x } = fan(i);
+
+      // Straighten the card out of its fanned tilt as it arrives at the top.
+      const straighten = gsap.to(card, {
+        rotate: 0,
+        x: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          end: "top 96px",
+          scrub: true,
+        },
+      });
+
       // Pin each card to the top of the viewport. pinSpacing: false means no
       // extra scroll room is reserved for it, so the next card's section
       // scrolls straight up and visually covers it — producing the stack.
@@ -84,14 +111,15 @@ export default function Services() {
         anticipatePin: 1,
       });
 
-      // While the next card slides over this one, scale it down and dim it
-      // slightly so the stack reads with depth instead of a flat swap.
+      // While the next card slides over this one, scale it down, dim it and
+      // tilt it the other way so it reads as tucked back into the fan.
       let dim: gsap.core.Tween | null = null;
       if (i < cards.length - 1) {
         dim = gsap.to(card, {
           scale: 0.88,
           y: -36,
-          rotate: i % 2 === 0 ? -2.5 : 2.5,
+          rotate: -rotate * 0.6,
+          x: -x * 0.6,
           filter: "brightness(0.45)",
           ease: "none",
           scrollTrigger: {
@@ -103,7 +131,9 @@ export default function Services() {
         });
       }
 
-      return dim ? [pin, dim.scrollTrigger!] : [pin];
+      return dim
+        ? [straighten.scrollTrigger!, pin, dim.scrollTrigger!]
+        : [straighten.scrollTrigger!, pin];
     });
 
     return () => {
